@@ -1,0 +1,165 @@
+:root {
+  --glass: rgba(255, 255, 255, 0.03);
+}
+
+body {
+  background-color: black;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+header .logo,
+header h2 {
+  margin-right: auto;
+}
+
+header nav {
+  margin-left: auto;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: rgba(196, 189, 189, 0.7);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav {
+  margin-right: 28px;
+}
+
+nav ul li:hover a {
+  color: white;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
+}
+
+nav a {
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  /* padding: 18px 28px; */
+  flex-direction: column;
+  max-width: 1100px;
+  margin: 30px auto;
+}
+
+section {
+  margin-bottom: 36px;
+  padding: 20px;
+  background: var(--glass);
+  border-radius: 16px;
+  /* border: 1px solid lightgrey; */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+  #intro {
+    flex-direction: column;
+    text-align: center;
+  }
+  #intro img {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+#intro {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  /* padding: 18px; */
+}
+
+#intro img {
+  flex: 0 0 360px;
+  width: 360px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.intro-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.intro-content h2,
+.intro-content h4,
+.intro-content p {
+  margin: 0;
+}
+.intro-content {
+  gap: 0.5rem;
+}
+
+section:not(#intro) h2 {
+  margin: 0 0 12px 0; /* readable spacing below the heading */
+  text-align: left; /* force left alignment */
+  align-self: flex-start; /* harmless if parent isn't flex; helps when it is */
+}
+
+.projects-content {
+  display: grid;
+  grid-auto-flow: column; /* place items left → right */
+  grid-auto-columns: minmax(260px, 1fr); /* each item gets its own column */
+  gap: 18px;
+  align-items: start;
+  overflow-x: auto; /* allow horizontal scrolling */
+  padding-bottom: 8px; /* room for scrollbar */
+}
+
+footer {
+  display: flex;
+  flex-direction: column; /* stack anchors top → bottom */
+  align-items: center; /* center anchors horizontally */
+  gap: 12px; /* vertical space between anchors */
+  padding: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: transparent;
+}
+
+footer a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  width: auto; /* don't force full-width */
+  max-width: 280px; /* optional constraint */
+  padding: 6px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(rgba(196, 189, 189, 0.7));
+}
+
+img {
+  border-radius: 18px;
+  background-color: #ffffff;
+  background-clip: padding-box; /* ensures background follows any border-radius */
+}

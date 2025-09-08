@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. A container to hold the divs */
+.container {
+    display: flex;
+}
+
+/* 2. Style the divs inside the container */
+.container > div {
+    flex: 1; /* This makes the divs grow to fill available space equally */
+    border: 20px solid black; /* Corrected: 'border' needs a style and color */
+    margin: 10px;
+}
+
+header{
+    background-color: cyan;
+    color: white;
+}
+
+.red {
+    background-color: red;
+}
+
+.green {
+    background-color: green;
+}
