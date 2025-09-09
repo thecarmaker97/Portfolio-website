@@ -27,11 +27,6 @@ header {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-header .logo,
-header h2 {
-  margin-right: 10px;
-}
-
 /* Brand (logo + name) */
 .brand {
   display: flex;
@@ -55,7 +50,7 @@ header h2 {
   font-weight: 700;
 }
 
-header nav {
+/* header nav {
   margin-left: auto;
 }
 
@@ -88,6 +83,57 @@ nav ul li:hover a {
 
 nav a {
   transition: color 0.15s ease, background 0.15s ease;
+} */
+
+/* Navigation */
+header nav {
+  margin-left: auto;
+}
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+header nav ul li {
+  margin: 0;
+}
+
+header nav ul li a {
+  color: rgba(0, 0, 0, 0.7); /* dark grey in light mode */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.15s ease, background 0.15s ease;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+header nav ul li a:hover {
+  color: #000;
+  background: rgba(0, 0, 0, 0.06);
+}
+nav a.active {
+  color: #000;
+  border-bottom: 2px solid goldenrod;
+}
+
+/* ---------- Dark Mode Navbar Fix ---------- */
+.dark-mode header {
+  background: rgba(0, 0, 0, 0.85); /* darker header */
+}
+.dark-mode .brand h2 {
+  color: #fff; /* white title */
+}
+.dark-mode header nav ul li a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.dark-mode header nav ul li a:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+.dark-mode nav a.active {
+  color: #fff;
+  border-bottom: 2px solid goldenrod;
 }
 
 main {
@@ -172,7 +218,7 @@ section:not(#intro) h2 {
 footer {
   display: flex;
   flex-direction: column; /* stack anchors top → bottom */
-  align-items: center; /* center anchors horizontally */
+  align-items: flex-start; /* center anchors horizontally */
   gap: 12px; /* vertical space between anchors */
   padding: 20px;
   border-top: 1px solid rgba(255, 255, 255, 0.04);
