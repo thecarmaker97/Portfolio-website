@@ -3,22 +3,56 @@
 }
 
 body {
-  background-color: black;
+  background-color: white;
   margin: 0;
   font-family: "Times New Roman", Times, serif;
-  color: white;
+  color: black;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  justify-content: space-between; /* brand left, nav right */
+  gap: 1rem;
+  padding: 14px 28px;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.06
+  ); /* light transparent bar - adjust color as needed */
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 header .logo,
 header h2 {
-  margin-right: auto;
+  margin-right: 10px;
+}
+
+/* Brand (logo + name) */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.brand img,
+#logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+.brand h2,
+.site-title {
+  margin: 0;
+  font-family: "Arial", serif;
+  font-size: 2.05rem;
+  color: #111;
+  font-weight: 700;
 }
 
 header nav {
@@ -58,7 +92,7 @@ nav a {
 
 main {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 20px;
   /* padding: 18px 28px; */
@@ -162,4 +196,42 @@ img {
   border-radius: 18px;
   background-color: #ffffff;
   background-clip: padding-box; /* ensures background follows any border-radius */
+}
+
+nav a.active {
+  color: white;
+  border-bottom: 2px solid goldenrod;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  backdrop-filter: blur(6px);
+  background: rgba(0, 0, 0, 0.55);
+}
+
+/* dark mode toggle button */
+#dark-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+.dark-mode {
+  background-color: black;
+  color: #eee;
 }
