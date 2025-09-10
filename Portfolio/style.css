@@ -106,7 +106,7 @@ nav a.active {
   width: 100%;
   max-width: 980px; /* change to taste (980–1100px are common) */
   margin: 0 auto;
-  padding: 0 16px; /* keep some horizontal breathing room */
+  padding: 16px 16px; /* keep some horizontal breathing room */
   box-sizing: border-box;
 }
 
@@ -262,4 +262,16 @@ header {
 /* Smooth scrolling for in-page navigation */
 html {
   scroll-behavior: smooth;
+}
+
+/* Make navbar title look interactive and add a subtle effect */
+.site-title {
+  cursor: pointer;
+  transition: color 0.18s ease, transform 0.12s ease;
+}
+
+/* slightly different style while hovered — class toggled by JS */
+.site-title.title-hovered {
+  color: goldenrod; /* change to any highlight color you like */
+  transform: translateY(-1px);
 }
